@@ -1,0 +1,110 @@
+/* Estilo general para la página de inicio de sesión */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f4ef; /* Fondo cálido */
+  padding: 2rem;
+  font-family: "Georgia", serif; /* Fuente clásica */
+  color: #4a3b31; /* Texto marrón oscuro */
+}
+
+/* Contenedor del formulario */
+.login-form {
+  background-color: #fff; /* Fondo blanco */
+  border: 1px solid #d3c5b8; /* Borde marrón claro */
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título del formulario */
+.login-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4a3b31 !important;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilo de los campos de entrada */
+.ant-input,
+.ant-input-password {
+  padding: 0.75rem;
+  border: 1px solid #d3c5b8; /* Borde marrón claro */
+  border-radius: 6px;
+  font-family: "Georgia", serif;
+  color: #4a3b31 !important;
+}
+
+.ant-input:focus,
+.ant-input-password:focus {
+  border-color: #b5a397; /* Borde marrón oscuro al enfocar */
+  box-shadow: 0 0 5px rgba(181, 163, 151, 0.5); /* Sombra suave */
+}
+
+/* Botón de enviar */
+.ant-btn-primary {
+  background-color: #c9a67b; /* Fondo beige */
+  border-color: #b58f6a; /* Borde marrón oscuro */
+  color: #fff; /* Texto blanco */
+  font-family: "Georgia", serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ant-btn-primary:hover {
+  background-color: #b58f6a !important; /* Fondo marrón oscuro al pasar el cursor */
+  border-color: #a07a5a; /* Borde más oscuro */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.ant-btn-primary:active {
+  background-color: #a07a5a; /* Fondo activo */
+  transform: translateY(0); /* Restaura elevación */
+}
+
+/* Checkbox */
+.ant-checkbox-wrapper {
+  font-size: 0.9rem;
+  color: #4a3b31; /* Texto marrón oscuro */
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #c9a67b;/* Fondo beige */
+  border-color: #b58f6a; /* Borde marrón oscuro */
+}
+
+.ant-checkbox:hover .ant-checkbox-inner {
+  border-color: #b58f6a; /* Borde marrón oscuro al pasar el cursor */
+}
+
+/* Mensajes de error */
+.ant-form-item-explain-error {
+  color: #b33a3a; /* Rojo oscuro vintage */
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+}
+
+/* Responsividad para pantallas grandes */
+@media (min-width: 768px) {
+  .login-page {
+    padding: 3rem;
+  }
+
+  .login-form {
+    padding: 2.5rem;
+  }
+
+  .login-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .ant-btn-primary {
+    font-size: 1.1rem;
+  }
+}

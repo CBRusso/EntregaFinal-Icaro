@@ -1,0 +1,78 @@
+/* Contenedor principal del carrusel */
+.carousel {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f4ef; /* Fondo cálido */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden;
+  }
+  
+  /* Cada ítem del carrusel */
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrado vertical y horizontal */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco */
+    height: 300px; /* Altura fija para garantizar centrado */
+    text-align: center;
+  }
+  
+  /* Contenedor para centrar la imagen */
+  .carousel-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontal y verticalmente */
+    width: 100%; /* Ocupar todo el ancho del carrusel */
+    height: 150px; /* Ajusta la altura según necesites */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda */
+  }
+  
+  /* Imagen en el carrusel */
+  .carousel-image {
+    max-width: 100%; /* Imagen ocupa el ancho completo del contenedor */
+    max-height: 100%; /* Imagen ocupa la altura completa del contenedor */
+    object-fit: contain; /* Escala la imagen para que se ajuste sin deformarla */
+  }
+  
+  /* Contenido del carrusel */
+  .carousel-content {
+    font-family: "Georgia", serif; /* Fuente clásica */
+    color: #4a3b31; /* Marrón oscuro */
+    margin-top: 10px;
+  }
+  
+  /* Título */
+  .carousel-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Descripción */
+  .carousel-description {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #6c5d52; /* Marrón claro */
+  }
+  
+  /* Precio */
+  .carousel-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b58f6a; /* Beige oscuro */
+  }
+  
+  /* Mensajes de error y carga */
+  .loading,
+  .error {
+    text-align: center;
+    font-family: "Georgia", serif;
+    font-size: 1.2rem;
+    color: #b33a3a; /* Rojo oscuro */
+    margin-top: 20px;
+  }
+  

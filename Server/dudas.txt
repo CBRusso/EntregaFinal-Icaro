@@ -1,0 +1,2 @@
+creare midelwere para autenticación de usuario 
+crear en controllers un nuevo file para la autenticación, con su propia ruta (req del body de thunder client)

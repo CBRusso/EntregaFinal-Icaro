@@ -1,0 +1,26 @@
+.encabezado {
+    background-color: #606c38;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .inicio {
+    text-align: center;
+  }
+  
+  .titulo {
+    font-family: "Georgia", serif;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* ✅ Contenedor de productos */
+  .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  

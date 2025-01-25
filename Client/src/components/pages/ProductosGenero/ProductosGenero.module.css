@@ -1,0 +1,40 @@
+.encabezado {
+    display: flex;
+    flex-direction: column;  /* ✅ Coloca los elementos en columna */
+    align-items: center;
+    justify-content: center;
+    background-color: #606c38;
+    padding: 1.5rem;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fefae0;
+    margin-top: 1rem; /* ✅ Espacio entre el logo y el título */
+    text-align: center; /* ✅ Centra el texto */
+  }
+  
+  .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* ✅ Centra los productos */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #b33a3a;
+    font-family: Georgia, serif;
+  }
+  
+  .noResults {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #b33a3a;
+  }
+  

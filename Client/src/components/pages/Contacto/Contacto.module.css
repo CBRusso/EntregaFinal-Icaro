@@ -1,0 +1,54 @@
+.contactContainer {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f4ef;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: "Georgia", serif;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: #4a3b31;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #6b5b4c;
+    margin-bottom: 20px;
+  }
+  
+  .contactForm {
+    text-align: left;
+  }
+  
+  .contactInfo {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e9e3da;
+    border-radius: 8px;
+  }
+  
+  .contactInfo h2 {
+    font-size: 20px;
+    color: #4a3b31;
+  }
+  
+  .contactInfo p {
+    font-size: 14px;
+    color: #6b5b4c;
+  }
+  
+  .submitButton {
+    width: 100%;
+    background-color: #c9a67b;
+    border: none;
+  }
+  
+  .submitButton:hover {
+    background-color: #b58f6a;
+  }
+  

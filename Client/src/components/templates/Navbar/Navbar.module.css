@@ -1,0 +1,128 @@
+Estilos base para el Navbar
+.container{
+  background-color: #d7ddc3;
+  padding: 50px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2) !important;
+  
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #e1eec5;
+    padding: 0.5rem 1rem;
+    
+  }
+  .navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px; /* Grosor del desenfoque */
+    background-color: #6A994E;
+    filter: blur(10px); /* Aplica el desenfoque */
+    pointer-events: none; /* Evita que interfiera con otros elementos */
+}
+
+  .brand{
+    
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    text-shadow: 2px 2px 2px rgba(71, 69, 69, 0.486);
+    transition: box-shadow 0.3s ease-in-out;
+    
+  }
+
+  .brand:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    
+}
+  
+  .navLink{
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-weight: 600 !important;
+  }
+
+  .navLink:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .searchButton{
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    transition: box-shadow 0.3s ease-in-out;
+    border-color: rgb(161, 175, 163) !important;
+    font-weight: 600 !important;
+    color: rgb(59, 58, 58) !important;
+  }
+
+  .searchButton:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Efecto de elevación */
+    background-color: #e9edc9 !important;
+  }
+ 
+
+  /* Estilos para la versión expandida del Navbar en pantallas grandes */
+  @media (min-width: 768px) { /* md breakpoint */
+    .navbar-expand {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .dropdown-menu {
+      position: absolute;
+    }
+  
+    .nav-link {
+      padding-right: var(--bs-navbar-nav-link-padding-x);
+      padding-left: var(--bs-navbar-nav-link-padding-x);
+    }
+  
+    .navbar-nav-scroll {
+      overflow: visible;
+    }
+  
+    .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+    }
+  
+    .navbar-toggler {
+      display: none;
+      
+    }
+  
+    /* Estilos para offcanvas en pantallas grandes */
+    .offcanvas {
+      position: static;
+      z-index: auto;
+      flex-grow: 1;
+      width: auto !important;
+      height: auto !important;
+      visibility: visible !important;
+      background-color: transparent !important;
+      border: 0 !important;
+      transform: none !important;
+      box-shadow: none;
+      transition: none;
+    }
+  
+    .offcanvas-header {
+      display: none;
+    }
+  
+    .offcanvas-body {
+      display: flex;
+      flex-grow: 0;
+      padding: 0;
+      overflow-y: visible;
+    }
+  }
+  

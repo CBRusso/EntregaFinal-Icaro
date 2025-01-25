@@ -1,0 +1,95 @@
+Gestión de Usuarios
+Registro de usuario
+
+Función: registrarUsuario(nombre, apellido, email, contraseña)
+Descripción: Permite que nuevos usuarios se registren en el sistema.
+Detalles: Encripta la contraseña antes de almacenarla en la base de datos.
+Inicio de sesión
+
+Función: iniciarSesion(email, contraseña)
+Descripción: Valida las credenciales de un usuario y genera un token de sesión (JWT o similar).
+Recuperación de contraseña
+
+Función: recuperarContraseña(email)
+Descripción: Envía un correo al usuario con un enlace para restablecer su contraseña.
+Actualización de perfil
+
+Función: actualizarUsuario(id_usuario, datosActualizados)
+Descripción: Permite a los usuarios modificar información de su perfil (como nombre, email, etc.).
+Gestión de Productos
+Listar productos
+
+Función: listarProductos(filtros)
+Descripción: Devuelve un listado de productos, permitiendo aplicar filtros como categoría, rango de precios, o disponibilidad.
+Detalles de un producto
+
+Función: obtenerProducto(id_producto)
+Descripción: Devuelve información detallada de un producto específico.
+Añadir producto (admin)
+
+Función: añadirProducto(codigo, nombre, precio, stock)
+Descripción: Permite a un administrador agregar un nuevo producto al catálogo.
+Actualizar producto (admin)
+
+Función: actualizarProducto(id_producto, datosActualizados)
+Descripción: Modifica los datos de un producto existente.
+Eliminar producto (admin)
+
+Función: eliminarProducto(id_producto)
+Descripción: Borra un producto del catálogo.
+Carrito de Compras
+Agregar producto al carrito
+
+Función: agregarAlCarrito(id_usuario, id_producto, cantidad)
+Descripción: Añade un producto al carrito de un usuario.
+Eliminar producto del carrito
+
+Función: eliminarDelCarrito(id_usuario, id_producto)
+Descripción: Remueve un producto del carrito.
+Ver carrito
+
+Función: obtenerCarrito(id_usuario)
+Descripción: Devuelve el listado de productos en el carrito con sus precios y cantidades.
+Actualizar cantidad de un producto en el carrito
+
+Función: actualizarCantidadCarrito(id_usuario, id_producto, nuevaCantidad)
+Descripción: Permite modificar la cantidad de un producto en el carrito.
+Vaciar carrito
+
+Función: vaciarCarrito(id_usuario)
+Descripción: Elimina todos los productos del carrito.
+Gestión de Compras
+Checkout
+
+Función: procesarCompra(id_usuario, datosPago)
+Descripción: Procesa el pago y genera una orden de compra.
+Historial de compras
+
+Función: obtenerHistorialCompras(id_usuario)
+Descripción: Devuelve un listado de las compras realizadas por el usuario.
+Detalles de una compra
+
+Función: obtenerDetalleCompra(id_compra)
+Descripción: Muestra información detallada de una compra específica.
+Gestión de Inventario (Admin)
+Actualizar stock
+
+Función: actualizarStock(id_producto, nuevaCantidad)
+Descripción: Modifica el stock de un producto después de una compra o actualización manual.
+Obtener productos con stock bajo
+
+Función: listarStockBajo(umbral)
+Descripción: Devuelve una lista de productos cuyo stock está por debajo de un umbral definido.
+Funciones Generales
+Autenticación
+
+Función: validarToken(token)
+Descripción: Verifica la validez del token de sesión.
+Pagos
+
+Función: procesarPago(datosPago)
+Descripción: Integra con un proveedor de pagos como Stripe o MercadoPago para procesar transacciones.
+Reportes (Admin)
+
+Función: generarReporte(criterios)
+Descripción: Genera reportes de ventas, usuarios registrados, o stock.
