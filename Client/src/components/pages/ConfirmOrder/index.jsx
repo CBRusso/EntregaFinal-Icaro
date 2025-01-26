@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Button, message, Select, Card, List } from "antd";
-import { useCartStore } from "../../../stores/CartStore"; // Importar el store del carrito
+import { useCartStore } from "../../../stores/CartStore"; 
 
 export const ConfirmOrder = () => {
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [orderConfirmed, setOrderConfirmed] = useState(false);
-  const { cart, clearCart } = useCartStore(); // Obtener carrito y función para vaciarlo
+  const { cart, clearCart } = useCartStore(); //  Obtener carrito y función para vaciarlo
 
-  // 🔹 Estado para controlar el tipo de envío
+  //  Estado para controlar el tipo de envío
   const [tipoEnvio, setTipoEnvio] = useState("Domicilio");
 
   // Obtener datos del usuario desde localStorage
@@ -41,6 +41,9 @@ export const ConfirmOrder = () => {
   const handleConfirmOrder = async (values) => {
     setLoading(true);
 
+    //  Guardar la dirección en `envio`, ya que en la base de datos se usa ese campo
+    const direccionFinal = tipoEnvio === "Domicilio" ? form.getFieldValue("direccion") : "Retiro en tienda";
+
     const order = {
       productos: cart,
       total,
@@ -48,13 +51,12 @@ export const ConfirmOrder = () => {
         id: storedUserDetails.id,
         nombre: values.nombre,
         email: values.email,
-        direccion: tipoEnvio === "Domicilio" ? values.direccion : "Retiro en tienda",
         telefono: values.telefono,
       },
-      envio: tipoEnvio,
+      envio: direccionFinal, //  Ahora `envio` guarda la dirección correctamente
     };
 
-    console.log("Enviando orden:", order);
+    console.log("Enviando orden:", order); //  Verificar en consola si la dirección se está enviando correctamente
 
     try {
       const response = await fetch("http://localhost:3000/Orders", {
@@ -71,13 +73,17 @@ export const ConfirmOrder = () => {
           throw new Error("El servidor no devolvió un número de orden.");
         }
 
+        //  Guardar la nueva dirección en localStorage
+        const updatedUserDetails = { ...storedUserDetails, direccion: direccionFinal };
+        localStorage.setItem("userDetails", JSON.stringify(updatedUserDetails));
+
         //  Vaciar carrito en Zustand y localStorage
         clearCart();
 
         //  Evitar mensaje de "carrito vacío", solo mostrar confirmación de orden
         setOrderConfirmed(true);
 
-        //  Mensaje de éxito y redirección
+        // Mensaje de éxito y redirección
         message.success(`Orden confirmada con éxito. Número de orden: #${data.orderId}`);
         setTimeout(() => navigate("/"), 3000);
       } else {
@@ -95,7 +101,7 @@ export const ConfirmOrder = () => {
     <div style={{ maxWidth: "600px", margin: "auto", padding: "20px", textAlign: "center" }}>
       <h2>Confirmación de Orden</h2>
 
-      {/* 📦 Lista de productos en la orden */}
+      {/*  Lista de productos en la orden */}
       {cart.length > 0 && (
         <Card title="Detalle de Productos" style={{ marginBottom: "20px" }}>
           <List
